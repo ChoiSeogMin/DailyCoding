@@ -3,7 +3,7 @@ package codility.Triangle;
 //미해결
 public class Triangle {
 
-    private static boolean isPossibleTriangle = false;
+    public static boolean isPossibleTriangle = false;
 
     public static int solution(int[] arr) {
         combination(new int[arr.length], 0, arr.length, 3, 0,arr);
@@ -16,13 +16,13 @@ public class Triangle {
 
     public static boolean isTriangle(int[] arr,int[] data) {
 
-        if(data[arr[0]] + data[arr[1]] < data[arr[2]]){
+        if((long)data[arr[0]] + (long)data[arr[1]] < (long)data[arr[2]]){
             return false;
         }
-        if(data[arr[0]] + data[arr[2]] < data[arr[1]]){
+        if((long)data[arr[0]] + (long)data[arr[2]] < (long)data[arr[1]]){
            return false;
         }
-        if(data[arr[1]] + data[arr[2]] < data[arr[0]]){
+        if((long)data[arr[1]] + (long)data[arr[2]] < (long)data[arr[0]]){
             return false;
         }
 
@@ -33,6 +33,7 @@ public class Triangle {
         if (r == 0){
             if(isTriangle(arr,data)){
                 isPossibleTriangle = true;
+            return;
             }
         }
         else if (target == n) return;
