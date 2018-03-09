@@ -24,6 +24,8 @@ class OddOccurrencesInArrayTest {
         assertEquals(0, 3^3);
         assertEquals(1,2^3); // (10 ^ 11) = 01
         assertEquals(3,7^4); // (111,100) = 011
+        assertEquals(2,2^1^1^1^1);
+        assertEquals(4,4^1^1);
 
     }
 }
