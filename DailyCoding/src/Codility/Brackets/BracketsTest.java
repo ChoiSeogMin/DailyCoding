@@ -13,6 +13,7 @@ class BracketsTest {
         assertEquals(0,Brackets.solution("([)()]"));
         assertEquals(1,Brackets.solution("((((((((()))))))))"));
         assertEquals(0,Brackets.solution("("));
+        assertEquals(0,Brackets.solution(")"));
         assertEquals(1, Brackets.solution("[][][][]()()()()(){}{}{}{}"));
 
     }

@@ -22,6 +22,8 @@ public class Brackets {
             if(isLeftBrakets(c)){
                 stack.push(c);
             }else{//rightBrackets
+                if(stack.size()==0)
+                    return 0;
                 if(hashMap.get(c) == stack.pop()){
                     continue;
                 }else{
