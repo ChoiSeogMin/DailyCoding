@@ -19,14 +19,14 @@ class NestingTest {
         String data8 = "()()()()()()((()))(((())))()((()))";
 
         assertEquals(1, Nesting.solution(data));
-        assertEquals(0, data2);
-        assertEquals(0, data3);
-        assertEquals(0, data4);
-        assertEquals(0, data5);
-        assertEquals(1, data6);
-        assertEquals(0, data6);
-        assertEquals(0, data7);
-        assertEquals(1, data8);
+        assertEquals(0, Nesting.solution(data2));
+        assertEquals(0, Nesting.solution(data3));
+        assertEquals(0, Nesting.solution(data4));
+        assertEquals(1, Nesting.solution(data5));
+        assertEquals(1, Nesting.solution(data6));
+        assertEquals(1, Nesting.solution(data6));
+        assertEquals(0, Nesting.solution(data7));
+        assertEquals(1, Nesting.solution(data8));
 
     }
 }
