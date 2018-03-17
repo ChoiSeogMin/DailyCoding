@@ -26,10 +26,10 @@ public class Nesting {
                 }
             }
         }
-        return isEmptyNest() ? 1 : 0;
+        return isEmptyNestBasket() ? 1 : 0;
     }
 
-    private static boolean isEmptyNest(){
+    private static boolean isEmptyNestBasket(){
 
         return nestBasket.size() == 0 ? true : false;
     }
