@@ -10,7 +10,6 @@ public class MaxProfit {
 
     private static boolean isVaildLengthArray(int[] A){
 
-
         return A.length > 1 ? true : false;
     }
     /**
@@ -21,14 +20,14 @@ public class MaxProfit {
      * @param A
      * @return
      */
-    private static int getMaxProfit(int[] A){
+    private static int getMaxProfit(int[] A) {
 
         int profitGap = Integer.MIN_VALUE;
         int tempProfitGap = 0;
         int i = 0;
         int j = 1;
 
-        while(!(i==A.length-1 && j==A.length-1)){
+        while(!(i==A.length-1 && j==A.length-1)) {
 
             if(i == j) {
                 j++;
@@ -39,7 +38,7 @@ public class MaxProfit {
             profitGap = Math.max(profitGap,A[j] - A[i]);
 
 
-            if(j == A.length-1){
+            if(j == A.length-1) {
                 i++;
                 continue;
             }
