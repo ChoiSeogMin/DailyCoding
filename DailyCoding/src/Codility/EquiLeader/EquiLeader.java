@@ -4,16 +4,16 @@ public class EquiLeader {
 
     public static int solution(int[] A) {
 
-        int dominantNum = getDominatorNum(A);
+        int dominantNum = getDominantNum(A);
 
         if(dominantNum != -1){
-            return isPossibleDominantNum(A,dominantNum) ? getEquipLeaderNum(A,dominantNum,getDominatCount(A,dominantNum)) : 0;
+            return isPossibleDominantNum(A,dominantNum) ? getEquipLeaderNum(A,dominantNum,getDominantCount(A,dominantNum)) : 0;
         }
 
         return 0;
     }
 
-    private static int getDominatorNum(int[] A) {
+    private static int getDominantNum(int[] A) {
 
         int dominant = 0;
         int size = 0;
@@ -47,7 +47,7 @@ public class EquiLeader {
         return A.length % 2 == 0 ? cnt > (A.length / 2) : cnt >= (A.length / 2) + 1;
     }
 
-    private static int getDominatCount(int[] A,int dominant) {
+    private static int getDominantCount(int[] A,int dominant) {
 
         int cnt = 0;
 
