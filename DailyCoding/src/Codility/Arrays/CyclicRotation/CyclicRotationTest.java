@@ -28,5 +28,9 @@ class CyclicRotationTest {
         int[] data5 = {1,2,3,4,5,6};
         int[] resultData5 = {3,4,5,6,1,2};
         assertArrayEquals(resultData5,CyclicRotation.solution(data5,76));
+
+        int[] data6 = {0,0};
+        int[] resultData6 = {0,0};
+        assertArrayEquals(resultData6,CyclicRotation.solution(data6,1134));
     }
 }
