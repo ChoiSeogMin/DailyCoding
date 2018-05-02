@@ -21,4 +21,11 @@ public class MaxCountersTest {
         int[] resultArray = {0, 0};
         assertArrayEquals(MaxCounters.solution(2,testArray),resultArray);
     }
+
+    @Test
+    public void 예제테스트3() {
+        int[] testArray = {3, 3, 3, 6, 7, 7, 3, 4, 5, 7, 6};
+        int[] resultArray = {4,4,4,4,4,5};
+        assertArrayEquals(resultArray,MaxCounters.solution(6,testArray));
+    }
 }
