@@ -1,38 +1,48 @@
 package codility.Sorting.NumberOfDisIntersections;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
 public class NumberOfDisIntersections {
 
-    public static int solution(int[] data) {
+        public static int solution(int[] A) {
+            int l = A.length;
 
-        Arrays.sort(data); //오름차순
-        Line[] lineArray = new Line[data.length];
+            long[] A1 = new long[l];
+            long[] A2 = new long[l];
 
-        for(int i = 0; i < data.length; i++) {//i는 인덱스 data[i] 는 길이
-            lineArray[i] = new Line(i-data[i],i+data[i]);
-        }
-
-        Arrays.sort(lineArray, new Comparator<Line>() {
-            @Override
-            public int compare(Line o1, Line o2) {
-                return o1.leftLine - o2.leftLine;
+            for(int i = 0; i < l; i++){
+                A1[i] = (long)A[i] + i;
+                A2[i] = -((long)A[i]-i);
             }
-        });
 
-        return -1;
-    }
+            Arrays.sort(A1);
+            Arrays.sort(A2);
+
+            long cnt = 0;
+
+            //여기부터
+            for(int i = A.length - 1; i >= 0; i--) {
+                int pos = Arrays.binarySearch(A2, A1[i]);
+                if(pos >= 0) {
+                    while(pos < A.length && A2[pos] == A1[i]) {
+                        pos++;
+                    }
+                    cnt += pos;
+                } else { // element not there
+                    int insertionPoint = -(pos+1);
+                    cnt += insertionPoint;
+                }
+            }
+
+            long sub = (long)l*((long)l+1)/2;
+            cnt = cnt - sub;
+
+            if(cnt > 1e7) return -1;
+
+            return (int)cnt;
+        }
 }
 
-class Line{
-
-    public int leftLine;
-    public int rightLine;
-
-    public Line(int leftLine, int rightLine) {
-        this.leftLine = leftLine;
-        this.rightLine = rightLine;
-    }
-}

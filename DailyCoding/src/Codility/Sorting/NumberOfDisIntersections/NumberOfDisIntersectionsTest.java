@@ -8,8 +8,9 @@ class NumberOfDisIntersectionsTest {
 
     @Test
     public void NumberOfDisIntersectionTest() {
-        int[] data = {1,5,2,1,4,0};
-        assertEquals(11,NumberOfDisIntersections.solution(data));
+        int[] data = {1, 5, 2, 1, 4, 0};
+        assertEquals(11, NumberOfDisIntersections.solution(data));
     }
+
 
 }
